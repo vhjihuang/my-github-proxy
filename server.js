@@ -41,5 +41,5 @@ app.get('/repos/:repoName/languages', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('🚀 中转服务运行中: http://localhost:3000');
+  console.log(`🚀 中转服务运行中: http://localhost:${port}`);
 });
