@@ -21,6 +21,9 @@ const GITHUB_USERNAME = 'vhjihuang';
 const TOKEN = process.env.GITHUB_TOKEN;
 // --- 配置结束 ---
 
+app.get('/', (req, res) => {
+  res.send('你好，你的 Vercel Node.js 应用已经启动！');
+});
 
 // 在你的 server.js 文件中添加
 app.get('/test', (req, res) => {
@@ -30,3 +33,5 @@ app.get('/test', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
+
+module.exports = app;
