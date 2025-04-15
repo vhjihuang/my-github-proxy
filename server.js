@@ -25,22 +25,6 @@ app.get('/test', (req, res) => {
   res.send('Hello from /test!');
 });
 
-// --- 路由定义结束 ---
-
-// --- Vercel 适配 ---
-// 导出 Express app 实例，Vercel 会自动处理请求
-// 这是使用 @vercel/node 的推荐方式之一
-export default app;
-
-// 如果你喜欢明确导出 handler 函数，也可以用下面这种方式：
-// export default function handler(req, res) {
-//   app(req, res);
-// };
-// --- Vercel 适配结束 ---
-
-// 注意：本地运行时，你可能需要添加监听端口的代码，但这在 Vercel 上不需要。
-// 例如，本地运行可以添加：
-// if (process.env.NODE_ENV !== 'production') {
-//   const PORT = process.env.PORT || 3001;
-//   app.listen(PORT, () => console.log(`Server running locally on port ${PORT}`));
-// }
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 3000}`);
+});
