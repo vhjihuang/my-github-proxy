@@ -12,6 +12,8 @@ const app = express();
 // 启用 CORS (允许跨域请求)
 app.use(cors());
 
+app.use(express.json());
+
 // --- 配置 ---
 // 替换为你的 GitHub 用户名
 const GITHUB_USERNAME = 'vhjihuang';
