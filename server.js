@@ -12,6 +12,10 @@ const GITHUB_USERNAME = 'vhjihuang'; // 替换成你的 GitHub 用户名
 const TOKEN = process.env.GITHUB_TOKEN;
 const port = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
 // 获取所有仓库
 app.get('/repos', async (req, res) => {
   try {
