@@ -25,11 +25,23 @@ app.get('/', (req, res) => {
   res.send('你好，你的 Vercel Node.js 应用已经启动！');
 });
 
-// 在你的 server.js 文件中添加
-app.get('/test', (req, res) => {
-  res.send('Hello from /test!');
+/// 示例 API 接口，使用 axios 获取数据
+app.get('/api/data', async (req, res) => {
+  try {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+    res.json(response.data);
+  } catch (error) {
+    console.error('获取数据失败:', error);
+    res.status(500).json({ error: '获取数据失败' });
+  }
 });
 
+app.post('/api/process', (req, res) => {
+  const { data } = req.body;
+  // 在这里处理接收到的数据
+  console.log('接收到的数据:', data);
+  res.json({ message: '数据处理成功', received: data });
+});
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
