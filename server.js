@@ -10,6 +10,7 @@ app.use(cors());
 
 const GITHUB_USERNAME = 'vhjihuang'; // 替换成你的 GitHub 用户名
 const TOKEN = process.env.GITHUB_TOKEN;
+const port = process.env.PORT || 3000;
 
 // 获取所有仓库
 app.get('/repos', async (req, res) => {
@@ -39,6 +40,6 @@ app.get('/repos/:repoName/languages', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('🚀 中转服务运行中: http://localhost:3000');
 });
