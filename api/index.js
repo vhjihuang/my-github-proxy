@@ -14,12 +14,12 @@ app.use(cors());
 
 app.use(express.json());
 
-// --- 配置 ---
-// 替换为你的 GitHub 用户名
-const GITHUB_USERNAME = 'vhjihuang';
-// 从环境变量获取 GitHub Token (必须在 Vercel 中设置)
-const TOKEN = process.env.GITHUB_TOKEN;
-// --- 配置结束 ---
+// // --- 配置 ---
+// // 替换为你的 GitHub 用户名
+// const GITHUB_USERNAME = 'vhjihuang';
+// // 从环境变量获取 GitHub Token (必须在 Vercel 中设置)
+// const TOKEN = process.env.GITHUB_TOKEN;
+// // --- 配置结束 ---
 
 app.get('/', (req, res) => {
   res.send('你好，你的 Vercel Node.js 应用已经启动！');
