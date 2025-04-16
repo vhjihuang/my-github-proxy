@@ -42,8 +42,8 @@ app.post('/api/process', (req, res) => {
   console.log('接收到的数据:', data);
   res.json({ message: '数据处理成功', received: data });
 });
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server is running on port ${process.env.PORT || 3000}`);
-});
+// app.listen(process.env.PORT || 3000, () => {
+//   console.log(`Server is running on port ${process.env.PORT || 3000}`);
+// });
 
 export default app;
