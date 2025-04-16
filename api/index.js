@@ -26,22 +26,22 @@ app.get('/', (req, res) => {
 });
 
 // 示例 API 接口，使用 axios 获取数据
-app.get('/api/data', async (req, res) => {
-  try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
-    res.json(response.data);
-  } catch (error) {
-    console.error('获取数据失败:', error);
-    res.status(500).json({ error: '获取数据失败' });
-  }
-});
+// app.get('/api/data', async (req, res) => {
+//   try {
+//     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+//     res.json(response.data);
+//   } catch (error) {
+//     console.error('获取数据失败:', error);
+//     res.status(500).json({ error: '获取数据失败' });
+//   }
+// });
 
-app.post('/api/process', (req, res) => {
-  const { data } = req.body;
-  // 在这里处理接收到的数据
-  console.log('接收到的数据:', data);
-  res.json({ message: '数据处理成功', received: data });
-});
+// app.post('/api/process', (req, res) => {
+//   const { data } = req.body;
+//   // 在这里处理接收到的数据
+//   console.log('接收到的数据:', data);
+//   res.json({ message: '数据处理成功', received: data });
+// });
 // app.listen(process.env.PORT || 3000, () => {
 //   console.log(`Server is running on port ${process.env.PORT || 3000}`);
 // });
