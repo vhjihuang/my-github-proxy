@@ -46,4 +46,8 @@ app.get('/', (req, res) => {
 //   console.log(`Server is running on port ${process.env.PORT || 3000}`);
 // });
 
-export default app;
+// export default app;
+export default async function handler(req, res) {
+  // Vercel expects a handler function
+  await app(req, res);
+}
