@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send('你好，你的 Vercel Node.js 应用已经启动！');
 });
 
-/// 示例 API 接口，使用 axios 获取数据
+// 示例 API 接口，使用 axios 获取数据
 app.get('/api/data', async (req, res) => {
   try {
     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
