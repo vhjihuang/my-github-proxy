@@ -14,8 +14,6 @@ app.use(cors());
 
 app.use(express.json());
 
-const serverless = require("serverless-http");
-
 // --- 配置 ---
 // 替换为你的 GitHub 用户名
 const GITHUB_USERNAME = 'vhjihuang';
@@ -48,4 +46,4 @@ app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
 
-module.exports = serverless(app);
+module.exports = app;
