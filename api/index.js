@@ -1,18 +1,18 @@
 import express from 'express';
-import axios from 'axios';
-import dotenv from 'dotenv';
-import cors from 'cors';
+// import axios from 'axios';
+// import dotenv from 'dotenv';
+// import cors from 'cors';
 
 // 加载 .env 文件中的环境变量 (主要用于本地开发, Vercel 上会使用后台配置的环境变量)
-dotenv.config();
+// dotenv.config();
 
 // 创建 Express 应用实例
 const app = express();
 
 // 启用 CORS (允许跨域请求)
-app.use(cors());
+// app.use(cors());
 
-app.use(express.json());
+// app.use(express.json());
 
 // // --- 配置 ---
 // // 替换为你的 GitHub 用户名
