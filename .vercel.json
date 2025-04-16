@@ -2,10 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.js": {
-      "handler": "default"
+      "handler": "handler"
     }
-  },
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/index.js" }
-  ]
+  }
 }
