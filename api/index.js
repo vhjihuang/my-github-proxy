@@ -25,23 +25,32 @@ app.get('/', (req, res) => {
   res.send('你好，你的 Vercel Node.js 应用已经启动！');
 });
 
-// 示例 API 接口，使用 axios 获取数据
-app.get('/api/data', async (req, res) => {
+app.get('/repos', async (req, res) => {
   try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
-    res.json(response.data);
-  } catch (error) {
-    console.error('获取数据失败:', error);
-    res.status(500).json({ error: '获取数据失败' });
+    const repoRes = await axios.get(`https://api.github.com/users/${GITHUB_USERNAME}/repos`, {
+      headers: { Authorization: `token ${TOKEN}` },
+    });
+    res.json(repoRes.data);
+  } catch (e) {
+    res.status(500).json({ message: '获取仓库失败', error: e.message });
   }
 });
 
-app.post('/api/process', (req, res) => {
-  const { data } = req.body;
-  // 在这里处理接收到的数据
-  console.log('接收到的数据:', data);
-  res.json({ message: '数据处理成功', received: data });
+app.get('/repos/:repoName/languages', async (req, res) => {
+  const { repoName } = req.params;
+  try {
+    const langRes = await axios.get(
+      `https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/languages`,
+      {
+        headers: { Authorization: `token ${TOKEN}` },
+      }
+    );
+    res.json(langRes.data);
+  } catch (e) {
+    res.status(500).json({ message: '获取语言失败', error: e.message });
+  }
 });
+
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
