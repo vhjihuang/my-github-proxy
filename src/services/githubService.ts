@@ -14,7 +14,7 @@ export const getAllReposWithLangs = async () => {
   if (cached) return cached;
 
   // 获取仓库列表
-  const reposRes = await axios.get(`${GITHUB_API_URL}/users/ ${GITHUB_USERNAME}/repos`, {
+  const reposRes = await axios.get(`${GITHUB_API_URL}/users/${GITHUB_USERNAME}/repos`, {
     headers: {
       Authorization: `token ${GITHUB_TOKEN}`,
     },
@@ -25,7 +25,7 @@ export const getAllReposWithLangs = async () => {
   // 并发获取语言信息
   const langPromises = repos.map((repo: any) =>
     axios.get(
-      `${GITHUB_API_URL}/repos/ ${GITHUB_USERNAME}/${repo.name}/languages`,
+      `${GITHUB_API_URL}/repos/${GITHUB_USERNAME}/${repo.name}/languages`,
       {
         headers: {
           Authorization: `token ${GITHUB_TOKEN}`,
