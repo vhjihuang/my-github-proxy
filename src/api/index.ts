@@ -2,8 +2,9 @@
 
 import { getAllReposWithLangs } from '../services/githubService';
 
-console.log('Request Headers:');
 export default async function handler(req: any, res: any) {
+  res.status(200).json({ message: 'Hello from Vercel!' });
+  return;
   try {
     // 设置 CORS（可选）
     res.setHeader('Access-Control-Allow-Origin', '*');
