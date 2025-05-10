@@ -44,8 +44,8 @@ export const getAllReposWithLangs = async () => {
       description: repo.description || "暂无描述",
       cloneUrl: repo.clone_url,
       repoUrl: repo.html_url,
-      stargazers_count: repo.stargazers_count,
-      forks_count: repo.forks_count,
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
       updated_at: repo.updated_at,
       languages: Object.entries(langData).map(([lang, bytes]) => ({
         name: lang,
