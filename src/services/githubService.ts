@@ -46,7 +46,7 @@ export const getAllReposWithLangs = async () => {
       repoUrl: repo.html_url,
       stars: repo.stargazers_count,
       forks: repo.forks_count,
-      updated_at: new Date(repo.updated_at).toLocaleDateString("zh-CN", {
+      updated_at: new Date(repo.updated_at).toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
