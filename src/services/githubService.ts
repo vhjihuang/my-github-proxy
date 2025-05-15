@@ -46,7 +46,11 @@ export const getAllReposWithLangs = async () => {
       repoUrl: repo.html_url,
       stars: repo.stargazers_count,
       forks: repo.forks_count,
-      updated_at: repo.updated_at,
+      updated_at: new Date(repo.updated_at).toLocaleDateString("zh-CN", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
       languages: Object.entries(langData).map(([lang, bytes]) => ({
         name: lang,
         percentage: parseFloat(((bytes / totalBytes) * 100).toFixed(1)),
